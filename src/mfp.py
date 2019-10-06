@@ -1,5 +1,5 @@
 import urllib  # accessing site
-import http.cookiejar as cookielib  # storing cookies for access
+import cookielib  # storing cookies for access
 from bs4 import BeautifulSoup  # for reading data from site
 import time  # for sleep timers between page requests
 import datetime  # organizing dates to scrape
@@ -51,7 +51,7 @@ def start_extract(un, pw, *args):
 
         # guided_goals
         time.sleep(3)
-        html = mfp.access_page('account/change_goals_guided/','')
+        html = mfp.access_page('account/change_goals_guided/', un,'')
         soup = BeautifulSoup(html)
 
         # determine whether imperial or metric

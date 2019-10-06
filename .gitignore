@@ -126,3 +126,4 @@ dmypy.json
 src/mfp_clean.db
 .vscode/launch.json
 .vscode/settings.json
+mfp_clean.db

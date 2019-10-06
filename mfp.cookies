@@ -1,0 +1,12 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+www.myfitnesspal.com	FALSE	/	TRUE	1602027773	gdpr_onboarding_user	b809b7260c46f5d6092d712dc865e4ae
+www.myfitnesspal.com	FALSE	/	TRUE	1886024586	known_user	31408970
+www.myfitnesspal.com	FALSE	/	TRUE	1573000986	last_login_date	2019-10-06
+www.myfitnesspal.com	FALSE	/	TRUE	1886024586	p	9EVM2q7PPgJ0HMQO2JsxrP54
+www.myfitnesspal.com	FALSE	/	TRUE	1602027773	premium_logged_out_homepage	b809b7260c46f5d6092d712dc865e4ae
+www.myfitnesspal.com	FALSE	/	TRUE	1602027773	premium_upsell_comparison	b809b7260c46f5d6092d712dc865e4ae
+www.myfitnesspal.com	FALSE	/	TRUE	1573000986	remember_me	v1%3A31408970%3A52651baac96c728f7ff58925e8d77d61
+www.myfitnesspal.com	FALSE	/	TRUE	1601941373	tracker	id%3D%3E%7Cuser_id%3D%3E%7Csource%3D%3E%7Csource_domain%3D%3E%7Ckeywords%3D%3E%7Cclicked_at%3D%3E2019-10-06+16%3A42%3A53+-0700%7Clanding_page%3D%3Ehttps%3A%2F%2Fwww.myfitnesspal.com%2F%7Csearch_engine%3D%3E%7Clp_category%3D%3E%7Clp_subcategory%3D%3E%7Ccp%3D%3E%7Ccr%3D%3E%7Cs1%3D%3E%7Cs2%3D%3E%7Ckw%3D%3E%7Cmt%3D%3E

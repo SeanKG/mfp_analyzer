@@ -22,8 +22,7 @@ import time
 import sys
 import os
 from datetime import datetime, timedelta
-from BeautifulSoup import BeautifulSoup
-
+from bs4 import BeautifulSoup
 
 class MfpExtractor(object):
 
@@ -95,17 +94,17 @@ class MfpExtractor(object):
         # open the front page of the website to set and save initial cookies
         response = self.opener.open(self.base_url)
         soup = BeautifulSoup(response)
-        token = ''
-        for attr, value in soup.find('input', attrs={'name': 'authenticity_token'}).attrs:
-            if attr == 'value':
-                token = value
-                print value
+        # token = ''
+        # for attr, value in soup.find('input', attrs={'name': 'authenticity_token'}).attrs:
+        #     if attr == 'value':
+        #         token = value
+        #         print value
         # parameters for login action
         login_data = urllib.urlencode({
             'username' : self.username,
             'password' : self.password,
             'remember_me' : True,
-            'authenticity_token' : token
+            # 'authenticity_token' : token
         })
 
         # construct the url
