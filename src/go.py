@@ -1,2 +1,6 @@
-from mfp import loadMfp
-loadMfp('seakeg', 'ototnaes1', "mfp_clean.db", '2011-07-10')
+import myfitnesspal
+
+client = myfitnesspal.Client('seakeg')
+
+day = client.get_date(2019, 10, 3)
+day
