@@ -92,7 +92,7 @@ class MfpExtractor(object):
     def login(self):
 
         # open the front page of the website to set and save initial cookies
-        response = self.opener.open(self.base_url)
+        response = self.access_page("account/change_goals_guided/", self.username, '')
         soup = BeautifulSoup(response)
         # token = ''
         # for attr, value in soup.find('input', attrs={'name': 'authenticity_token'}).attrs:

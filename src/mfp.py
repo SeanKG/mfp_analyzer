@@ -51,7 +51,7 @@ def start_extract(un, pw, *args):
 
         # guided_goals
         time.sleep(3)
-        html = mfp.access_page('account/change_goals_guided/', un,'')
+        html = mfp.access_page('account/change_goals_guided/', un, '')
         soup = BeautifulSoup(html)
 
         # determine whether imperial or metric
