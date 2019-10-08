@@ -128,3 +128,4 @@ src/mfp_clean.db
 .vscode/settings.json
 mfp_clean.db
 mfp.cookies
+mydb.db

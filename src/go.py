@@ -4,9 +4,9 @@ import datetime
 
 db = sqlite3.connect("mydb.db")
 cursor = db.cursor()
-cursor.execute('''
-    DROP TABLE diary;
-''')
+# cursor.execute('''
+#     DROP TABLE diary;
+# ''')
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS diary(
         date DATE PRIMARY KEY,
@@ -23,7 +23,7 @@ client = myfitnesspal.Client('seakeg')
 days = 90
 # today = 
 
-date = datetime.datetime.now()
+date = datetime.datetime.today()
 
 # date
 
@@ -40,7 +40,7 @@ while days > 0:
     cursor.execute('''
         INSERT INTO diary(date, calories, carbohydrates, fat, protein)
         VALUES(:date,:calories,:carbohydrates,:fat,:protein)
-    ''', {'date': date,'calories': calories,'carbohydrates': carbohydrates,'fat': fat,'protein': protein})
+    ''', {'date': date.strftime("%Y-%m-%d"),'calories': calories,'carbohydrates': carbohydrates,'fat': fat,'protein': protein})
         # ON CONFLICT(date) DO UPDATE SET
         #     calories=excluded.calories,
         #     carbohydrates=excluded.carbohydrates,
