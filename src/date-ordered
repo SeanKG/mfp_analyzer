@@ -1,0 +1,3 @@
+-- SQLite
+SELECT date, calories, carbohydrates, fat, protein
+FROM `diary` ORDER BY date DESC;

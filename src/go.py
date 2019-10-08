@@ -38,14 +38,18 @@ while days > 0:
     protein = day.totals.get('protein')
 
     cursor.execute('''
-        INSERT INTO diary(date, calories, carbohydrates, fat, protein)
-        VALUES(:date,:calories,:carbohydrates,:fat,:protein)
+        REPLACE INTO diary(date, calories, carbohydrates, fat, protein)
+            VALUES(:date,:calories,:carbohydrates,:fat,:protein)
     ''', {'date': date.strftime("%Y-%m-%d"),'calories': calories,'carbohydrates': carbohydrates,'fat': fat,'protein': protein})
-        # ON CONFLICT(date) DO UPDATE SET
-        #     calories=excluded.calories,
-        #     carbohydrates=excluded.carbohydrates,
-        #     fat=excluded.fat,
-        #     protein=excluded.protein;
+            # This is how we'd do upsert if it worked in this version of SQLite3 :(
+            # Python packages sqlite directly and it seems we are stuck with 3.22 for now
+            # Upserts were added in 3.24 unfortunately
+            # ON CONFLICT(date) DO UPDATE SET
+            #     calories=excluded.calories,
+            #     carbohydrates=excluded.carbohydrates,
+            #     fat=excluded.fat,
+            #     protein=excluded.protein
+            # WHERE excluded.calories>diary.calories
     
     db.commit()
     print(date)
