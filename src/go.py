@@ -18,10 +18,10 @@ cursor.execute('''
 ''')
 db.commit()
 
+# https://github.com/coddingtonbear/python-myfitnesspal
 client = myfitnesspal.Client('seakeg')
 
 days = 90
-# today = 
 
 date = datetime.datetime.today()
 
