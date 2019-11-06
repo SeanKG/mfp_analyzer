@@ -1,6 +1,5 @@
 import hashlib, base64
-
-import config
+from websockets.config import guid, http_host, socket_host, socket_port
 
 class Client:
     """
@@ -21,7 +20,7 @@ class Client:
         if not 'Sec-WebSocket-Key' in headers:
             raise ValueError('Missing header: Sec-WebSocket-Key')
 
-        accept = base64.b64encode(hashlib.sha1(headers['Sec-WebSocket-Key'].encode() + config.guid.encode()).digest())
+        accept = base64.b64encode(hashlib.sha1(headers['Sec-WebSocket-Key'].encode() + guid.encode()).digest())
 
         handshake = ('HTTP/1.1 101 Web Socket Protocol Handshake\r\n'
             'Upgrade: WebSocket\r\n'
@@ -30,7 +29,7 @@ class Client:
             'WebSocket-Location: ws://%s:%s/\r\n'
             'WebSocket-Protocol: sample\r\n'
             'Sec-WebSocket-Accept: %s\r\n\r\n'
-            % (config.http_host, config.socket_host, config.socket_port, accept)
+            % (http_host, socket_host, socket_port, accept)
         )
         self.s.send(handshake.encode())
 

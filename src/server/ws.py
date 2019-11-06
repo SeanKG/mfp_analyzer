@@ -1,10 +1,13 @@
-from websockets import config, server
+# from websockets import config, server
+# import websockets.config
+# import websockets.server
+
+from websockets.config import socket_port
+from websockets.server import Server
 
 # Runs server
-print('Starting server on port %s. Waiting for connections...' % config.socket_port)
-server.Server().run()
-
-
+print('Starting server on port %s. Waiting for connections...' % socket_port)
+Server().run()
 
 # import socket, threading, time, hashlib, base64
 

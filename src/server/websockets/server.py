@@ -1,6 +1,6 @@
 import socket, threading
-
-import .config, .client
+from websockets.config import socket_host, socket_port
+from websockets.client import Client
 
 """
 Originally taken from: https://github.com/eko/python-websocket/blob/master/websocket/wsserver.py
@@ -21,14 +21,14 @@ class Server:
         """
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        s.bind((config.socket_host, config.socket_port))
+        s.bind((socket_host, socket_port))
         s.listen(5)
 
         try:
             while True:
                 conn, addr = s.accept()
 
-                newClient = client.Client(conn, addr, self)
+                newClient = Client(conn, addr, self)
 
                 t = threading.Thread(target=newClient.run)
                 t.start()
